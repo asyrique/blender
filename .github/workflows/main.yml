@@ -23,6 +23,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: 'blender-v2.92-release'
+          submodules: 'recursive'
       - name: Python
         uses: actions/setup-python@v2
         with:
