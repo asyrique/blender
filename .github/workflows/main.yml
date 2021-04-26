@@ -38,10 +38,10 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install build-essential git subversion cmake libx11-dev libxxf86vm-dev libxcursor-dev libxi-dev libxrandr-dev libxinerama-dev libglew-dev
-          mkdir ./lib
-          cd ./lib
+          mkdir $GITHUB_WORKSPACE/lib
+          cd $GITHUB_WORKSPACE/lib
           svn checkout https://svn.blender.org/svnroot/bf-blender/tags/blender-2.92-release/lib/linux_centos7_x86_64 || svn switch https://svn.blender.org/svnroot/bf-blender/tags/blender-2.92-release/lib/linux_centos7_x86_64
-          cd ..
+          cd $GITHUB_WORKSPACE
       - name: Run make
         run: |
           make headless
