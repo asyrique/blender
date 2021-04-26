@@ -10,7 +10,7 @@
 	ignore = all
 [submodule "release/datafiles/locale"]
 	path = release/datafiles/locale
-	url =  https://git.blender.org/blender-translations.git
+	url =  https://github.com/blender/blender-translations.git
 	branch = blender-v2.92-release
 	ignore = all
 [submodule "source/tools"]
