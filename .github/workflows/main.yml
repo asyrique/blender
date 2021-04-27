@@ -33,10 +33,15 @@ jobs:
           cd $GITHUB_WORKSPACE
       - name: Run make
         run: |
-          make bpy
-      - name: Upload Build
+          make bpy -DWITH_INSTALL_PORTABLE=ON
+          make headless -DWITH_INSTALL_PORTABLE=ON
+      - name: Upload Headless Build
         uses: actions/upload-artifact@v2
         with:
-          name: Blender-Release
-          path: |
-            /home/runner/work/blender/build_linux_bpy
+          name: Blender-Headless
+          path: /home/runner/work/blender/build_linux_headless/bin
+      - name: Upload Bpy Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: Blender-Bpy
+          path: /home/runner/work/blender/build_linux_bpy/bin
