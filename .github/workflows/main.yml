@@ -39,9 +39,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Blender-Headless
-          path: /home/runner/work/blender/build_linux_headless/bin
+          path: /home/runner/work/blender/build_linux_headless
       - name: Upload Bpy Build
         uses: actions/upload-artifact@v2
         with:
           name: Blender-Bpy
-          path: /home/runner/work/blender/build_linux_bpy/bin
+          path: /home/runner/work/blender/build_linux_bpy
