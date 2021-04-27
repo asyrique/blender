@@ -39,4 +39,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Blender-Release
-          path: ${{ $GITHUB_WORKSPACE }}/build_release/bin
+          path: ${{ github.workspace }}/build_release/bin
