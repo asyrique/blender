@@ -24,13 +24,6 @@ jobs:
         with:
           ref: 'blender-v2.92-release'
           submodules: 'true'
-      - name: Cache precompiled libs
-        uses: actions/cache@v2
-        env:
-          cache-name: ${{ github.ref }}
-        with:
-          path: ${{ github.workspace }}/../lib
-          key: build-cache-${{ env.cache-name }}
       - name: Install dependencies
         run: |
           sudo apt-get install build-essential git subversion cmake libx11-dev libxxf86vm-dev libxcursor-dev libxi-dev libxrandr-dev libxinerama-dev libglew-dev
@@ -40,9 +33,10 @@ jobs:
           cd $GITHUB_WORKSPACE
       - name: Run make
         run: |
-          mkdir $GITHUB_WORKSPACE/build_linux_release
-          cd $GITHUB_WORKSPACE/build_linux_release
-          cmake $GITHUB_WORKSPACE
-          cd $GITHUB_WORKSPACE
           make headless
- #         make bpy
+#         make bpy
+      - name: Upload Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: Blender-Release
+          path: ${{ $GITHUB_WORKSPACE }}/build_release/bin
