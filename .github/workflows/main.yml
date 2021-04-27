@@ -24,16 +24,12 @@ jobs:
         with:
           ref: 'blender-v2.92-release'
           submodules: 'true'
-#       - name: Python
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: '3.7'
-      - name: Cache build environment
+      - name: Cache precompiled libs
         uses: actions/cache@v2
         env:
           cache-name: ${{ github.ref }}
         with:
-          path: ${{ github.workspace }}
+          path: ${{ github.workspace }}../lib
           key: build-cache-${{ env.cache-name }}
       - name: Install dependencies
         run: |
@@ -49,4 +45,4 @@ jobs:
           cmake $GITHUB_WORKSPACE
           cd $GITHUB_WORKSPACE
           make headless
-          make bpy
+ #         make bpy
