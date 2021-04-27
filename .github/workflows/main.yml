@@ -33,11 +33,10 @@ jobs:
           cd $GITHUB_WORKSPACE
       - name: Run make
         run: |
-          make headless
-#         make bpy
+          make bpy
       - name: Upload Build
         uses: actions/upload-artifact@v2
         with:
           name: Blender-Release
           path: |
-            /home/runner/work/blender/build_linux_headless
+            /home/runner/work/blender/build_linux_bpy
