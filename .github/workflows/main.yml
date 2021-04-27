@@ -39,4 +39,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Blender-Release
-          path: ${{ github.workspace }}/build_release/bin
+          path: |
+            /home/runner/work/blender/build_linux_headless
