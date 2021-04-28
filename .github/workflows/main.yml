@@ -44,4 +44,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Blender-Bpy
-          path: /home/runner/work/blender/build_linux_bpy
+          path: |
+            /home/runner/work/blender/build_linux_bpy
+            /home/runner/work/blender/lib/linux_centos7_x86_64/python/lib/python3.7
